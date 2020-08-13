@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cron-spigot</artifactId>
+
+    <parent>
+        <groupId>me.tade.mccron</groupId>
+        <artifactId>MC-Cron</artifactId>
+        <version>w1.9.2</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>me.tade.mccron</groupId>
+            <artifactId>cron-api</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+</project>

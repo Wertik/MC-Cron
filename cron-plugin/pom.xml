@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cron-plugin</artifactId>
+
+    <name>MC-Cron</name>
+
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>me.tade.mccron</groupId>
+        <artifactId>MC-Cron</artifactId>
+        <version>w1.9.2</version>
+    </parent>
+
+    <build>
+        <defaultGoal>clean install</defaultGoal>
+        <finalName>${project.name}-${project.version}</finalName>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>${project.basedir}/src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <compilerVersion>1.8</compilerVersion>
+                    <source>8</source>
+                    <target>8</target>
+                    <release>8</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>me.tade.mccron</groupId>
+            <artifactId>cron-api</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.tade.mccron</groupId>
+            <artifactId>cron-spigot</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.tade.mccron</groupId>
+            <artifactId>cron-bungee</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>
