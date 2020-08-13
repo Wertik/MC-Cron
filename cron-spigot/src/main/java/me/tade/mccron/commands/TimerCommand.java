@@ -31,18 +31,18 @@ public class TimerCommand implements CommandExecutor {
                 sender.sendMessage("§aUse /timer <time> <command>");
                 return true;
             } else if (args.length >= 2) {
-                String c = "";
+                StringBuilder c = new StringBuilder();
                 for (int i = 1; i < args.length; i++) {
-                    c = c + " " + args[i];
+                    c.append(" ").append(args[i]);
                 }
-                c = c.substring(1);
+                c = new StringBuilder(c.substring(1));
 
                 int time = Integer.parseInt(args[0]);
                 if (time > 300) {
                     sender.sendMessage("§cMaximum is 300 seconds (5 minutes)!");
                     return true;
                 }
-                runCmd(c, time);
+                runCmd(c.toString(), time);
             }
         }
         return true;
